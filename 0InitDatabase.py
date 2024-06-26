@@ -18,9 +18,12 @@ def main():
         productId = product['id']
         if(len(product['images'])>0):
             vector = encoder.processProduct(product)[0]
+            # max length of clip ai string text encoder
+            text = product['description'] if len(product['description']) < 77 else product['description'][0:77]
+            textVector = encoder.encodeText(text).cpu().numpy().tolist()[0]
             metadata = {key: value for key, value in product.items()}
             
-            qdrantStorage.upsertVector(productId, vector, metadata)
+            qdrantStorage.upsertVector(productId, vector, textVector, metadata)
             vectors.append(vector)
             ids.append(ids)
             print(i) if i%100==0 else 0
