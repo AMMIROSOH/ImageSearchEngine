@@ -17,19 +17,6 @@ class QdrantStorage:
             collection_name=self.collectionName,
             vectors_config=VectorParams(size=512, distance=Distance.COSINE),
         )
-        self.client.recreate_collection(
-            collection_name=self.collectionName,
-            vectors_config={
-                "text": VectorParams(
-                    size=512,
-                    distance=Distance.EUCLID,
-                ),
-                "image": VectorParams(
-                    size=512,
-                    distance=Distance.COSINE,
-                ),
-            },
-        )
 
     def upsertVector(self, productId, vector, metadata):
         """
