@@ -27,7 +27,7 @@ class QdrantStorage:
                 },
             )
     def collectionExists(self, collectionName):
-        return collectionName in [item[1][0].name for item in self.client.get_collections()]
+        return collectionName in [item[1][0].name for item in self.client.get_collections() if len(item[1])>0]
 
     def upsertVector(self, productId, imageVector, textVector, metadata):
         """

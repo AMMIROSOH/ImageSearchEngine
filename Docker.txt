@@ -1,1 +1,2 @@
 docker run -p 6333:6333 -p 6334:6334 -p 5000:5000 -p 3000:3000 -v /:/qdrant/storage:z qdrant/qdrant
+docker exec -it af bash 

@@ -22,8 +22,8 @@ class ClipAI:
             try:
                 response = requests.get(url)
                 response.raise_for_status()  # Raise an exception for HTTP errors
-                with open(f'E:\\Datasets\\ImageSearch\\{productId}.jpg', 'wb') as f:
-                    f.write(response.content)
+                # with open(f'E:\\Datasets\\ImageSearch\\{productId}.jpg', 'wb') as f:
+                #     f.write(response.content)
                 return Image.open(BytesIO(response.content))
             except Exception as e:
                 print(f"Attempt {attempt + 1} failed with error: {e}")

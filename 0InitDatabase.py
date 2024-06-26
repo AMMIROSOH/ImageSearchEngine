@@ -30,10 +30,10 @@ def main():
 
     print("Encoded features stored in Qdrant.")
 
-    with h5py.File(f'Data\\vectors.h5', 'w') as f:
-        f.create_dataset(f'vectors', data=np.array(vectors))
-    with h5py.File(f'Data\\ids.h5', 'w') as f:
-        f.create_dataset(f'ids', data=np.array(ids))
+    # with h5py.File(f'Data\\vectors.h5', 'w') as f:
+    #     f.create_dataset(f'vectors', data=np.array(vectors))
+    # with h5py.File(f'Data\\ids.h5', 'w') as f:
+    #     f.create_dataset(f'ids', data=np.array(ids))
 
 
 if __name__ == "__main__":
