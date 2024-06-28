@@ -1,2 +1,3 @@
-docker run -p 6333:6333 -p 6334:6334 -p 5000:5000 -p 3000:3000 -v /:/qdrant/storage:z qdrant/qdrant
-docker exec -it af bash 
+docker run -p 6333:6333 -p 6334:6334 -p 5000:5000 -p 3000:3000 -v E:\Datasets\ImageSearch\qdrant:/qdrant/storage:z imagesemanticsearch:imagesemanticsearch
+docker exec -it 72 bash 
+docker run --hostname=85d3453ddfbe --user=0:0 --env=PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin --env=DIR= --env=TZ=Etc/UTC --env=RUN_MODE=production --volume=/:/qdrant/storage:z --network=bridge --workdir=/qdrant -p 3000:3000 -p 5000:5000 -p 6333:6333 -p 6334:6334 --restart=no --label='org.opencontainers.image.description=Official Qdrant image' --runtime=runc -d imagesemanticsearch:imagesemanticsearch
